@@ -1,0 +1,39 @@
+# Project Information
+site_name: manual.hnap.de
+site_url: 'https://manual.hnap.de'
+
+# Repository
+repo_name: 'HAMNET-Access-Protocol/manual.hnap.de'
+repo_url: https://github.com/HAMNET-Access-Protocol/manual.hnap.de
+
+# Configuration
+theme:
+  name: material
+  palette:
+    primary: 'white'
+    accent: 'light blue'
+  logo: https://hnap.de/assets/img/hnap_logo_quadrat.png
+  favicon: assets/favicon.ico
+  font: false
+extra_css:
+  - css/pdf.css
+
+# Customization
+plugins:
+  - pdf-export:
+      verbose: false
+      combined: true
+      enabled_if_env: ENABLE_PDF_EXPORT
+extra:
+  version: 1.0
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: 'https://github.com/HAMNET-Access-Protocol'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+nav:
+  - Home: index.md

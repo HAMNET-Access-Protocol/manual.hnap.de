@@ -1,0 +1,15 @@
+@page {
+    size: a4 portrait;
+    margin: 25mm 10mm 25mm 10mm;
+    counter-increment: page;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    white-space: pre;
+    color: grey;
+    @bottom-center {
+        content: 'bt-trx.com';
+    }
+    @top-center {
+        content: string(chapter);
+    }
+}
