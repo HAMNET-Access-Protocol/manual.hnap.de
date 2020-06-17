@@ -37,3 +37,8 @@ markdown_extensions:
       permalink: true
 nav:
   - Home: index.md
+  - Build&Install:
+    - Building the Firmware: building_the_fw.md
+    - Build the simulation target: build_simulation.md
+    - Build apps without firmware: build_apps.md
+  - System Configuration: system_config.md
