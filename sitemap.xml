@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://manual.hnap.de/</loc>
-     <lastmod>2020-06-16</lastmod>
+     <lastmod>2020-06-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://manual.hnap.de/building_the_fw/</loc>
+     <lastmod>2020-06-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://manual.hnap.de/build_simulation/</loc>
+     <lastmod>2020-06-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://manual.hnap.de/build_apps/</loc>
+     <lastmod>2020-06-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://manual.hnap.de/system_config/</loc>
+     <lastmod>2020-06-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

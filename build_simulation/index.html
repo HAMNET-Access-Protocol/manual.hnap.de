@@ -9,19 +9,21 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+        <link rel="canonical" href="https://manual.hnap.de/build_simulation/">
       
-      <link rel="shortcut icon" href="assets/favicon.ico">
+      
+      <link rel="shortcut icon" href="../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
     
     
       
-        <title>manual.hnap.de</title>
+        <title>Build the simulation target - manual.hnap.de</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6e35a1a6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e35a1a6.min.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/palette.a46bcfb3.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
       
       
         
@@ -35,7 +37,7 @@
     
     
     
-      <link rel="stylesheet" href="css/pdf.css">
+      <link rel="stylesheet" href="../css/pdf.css">
     
     
       
@@ -54,6 +56,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#build-the-simulation-application" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -78,7 +85,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              
+              Build the simulation target
             
           </span>
         </div>
@@ -147,7 +154,7 @@
 
 
   <li class="md-nav__item">
-    <a href="." title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -157,10 +164,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Build&Install
@@ -184,7 +193,7 @@
 
 
   <li class="md-nav__item">
-    <a href="building_the_fw/" title="Building the Firmware" class="md-nav__link">
+    <a href="../building_the_fw/" title="Building the Firmware" class="md-nav__link">
       Building the Firmware
     </a>
   </li>
@@ -194,11 +203,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="build_simulation/" title="Build the simulation target" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Build the simulation target
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Build the simulation target" class="md-nav__link md-nav__link--active">
       Build the simulation target
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-simulation-application" class="md-nav__link">
+    Build the simulation application
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -208,7 +255,7 @@
 
 
   <li class="md-nav__item">
-    <a href="build_apps/" title="Build apps without firmware" class="md-nav__link">
+    <a href="../build_apps/" title="Build apps without firmware" class="md-nav__link">
       Build apps without firmware
     </a>
   </li>
@@ -225,7 +272,7 @@
 
 
   <li class="md-nav__item">
-    <a href="system_config/" title="System Configuration" class="md-nav__link">
+    <a href="../system_config/" title="System Configuration" class="md-nav__link">
       System Configuration
     </a>
   </li>
@@ -238,12 +285,87 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-the-simulation-application" class="md-nav__link">
+    Build the simulation application
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                  <a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/edit/master/docs/build_simulation.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Build the simulation target</h1>
+                
+                <h2 id="build-the-simulation-application">Build the simulation application<a class="headerlink" href="#build-the-simulation-application" title="Permanent link">&para;</a></h2>
+<p>The PHY and MAC layer can be simulated over a channel, in order to test BER performance. Here is 
+how to build the target on your PC.</p>
+<p>First, install libfftw:</p>
+<p><code>apt install libfftw3-dev</code></p>
+<p>Then, compile and install libfec</p>
+<div class="codehilite"><pre><span></span><code>cd libfec
+./configure
+make install
+</code></pre></div>
 
+
+<p>Now we have the library dependencies for liquid-dsp installed. Install liquid-dsp:</p>
+<p>More detailed installation instruction is here: https://github.com/jgaeddert/liquid-dsp</p>
+<div class="codehilite"><pre><span></span><code>cd liquid-dsp
+apt install automake autoconf
+./bootstrap.sh
+./configure
+make install
+</code></pre></div>
+
+
+<p>When running <code>./configure</code> make sure that the libfec and libfftw libraries are detected!</p>
+<p>Finally, the simulation target can be compiled. The transceiver project uses cmake, the build target
+for the simulation is called test_mac.</p>
+<div class="codehilite"><pre><span></span><code>cd transceiver
+mkdir cmake-build-debug
+cd cmake-build-debug
+cmake -DCMAKE_BUILD_TYPE=Debug ..   # or Release, as you wish
+make test_mac
+</code></pre></div>
+
+
+<p>The simulation can be configured by setting variables in <code>runtime/test.h</code> and <code>runtime/test_mac.c</code>.</p>
+                
+              
               
                 
 
@@ -256,6 +378,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../building_the_fw/" title="Building the Firmware" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Building the Firmware
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../build_apps/" title="Build apps without firmware" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Build apps without firmware
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -286,15 +443,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "",
+          base: "..",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.7a2ea5ba.min.js"
+            worker: "../assets/javascripts/worker/search.7a2ea5ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

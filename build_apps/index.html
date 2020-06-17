@@ -1,0 +1,602 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://manual.hnap.de/build_apps/">
+      
+      
+      <link rel="shortcut icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
+    
+    
+      
+        <title>Build apps without firmware - manual.hnap.de</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e35a1a6.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/pdf.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-applications-without-building-the-firmware" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://manual.hnap.de" title="manual.hnap.de" class="md-header-nav__button md-logo" aria-label="manual.hnap.de">
+      
+  <img src="https://hnap.de/assets/img/hnap_logo_quadrat.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            manual.hnap.de
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Build apps without firmware
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HAMNET-Access-Protocol/manual.hnap.de
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://manual.hnap.de" title="manual.hnap.de" class="md-nav__button md-logo" aria-label="manual.hnap.de">
+      
+  <img src="https://hnap.de/assets/img/hnap_logo_quadrat.png" alt="logo">
+
+    </a>
+    manual.hnap.de
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HAMNET-Access-Protocol/manual.hnap.de
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Build&Install
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Build&Install" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Build&Install
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../building_the_fw/" title="Building the Firmware" class="md-nav__link">
+      Building the Firmware
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../build_simulation/" title="Build the simulation target" class="md-nav__link">
+      Build the simulation target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Build apps without firmware
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Build apps without firmware" class="md-nav__link md-nav__link--active">
+      Build apps without firmware
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-applications-without-building-the-firmware" class="md-nav__link">
+    Build applications without building the firmware
+  </a>
+  
+    <nav class="md-nav" aria-label="Build applications without building the firmware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-get-arm-toolchain-and-pluto-sysroot" class="md-nav__link">
+    1. Get arm toolchain and pluto sysroot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-compile-libraries" class="md-nav__link">
+    2. compile libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-compile-apps" class="md-nav__link">
+    3. compile apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-upload-everything-to-pluto" class="md-nav__link">
+    4. Upload everything to pluto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-pc-configuration" class="md-nav__link">
+    Host PC configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../system_config/" title="System Configuration" class="md-nav__link">
+      System Configuration
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-applications-without-building-the-firmware" class="md-nav__link">
+    Build applications without building the firmware
+  </a>
+  
+    <nav class="md-nav" aria-label="Build applications without building the firmware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-get-arm-toolchain-and-pluto-sysroot" class="md-nav__link">
+    1. Get arm toolchain and pluto sysroot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-compile-libraries" class="md-nav__link">
+    2. compile libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-compile-apps" class="md-nav__link">
+    3. compile apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-upload-everything-to-pluto" class="md-nav__link">
+    4. Upload everything to pluto
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-pc-configuration" class="md-nav__link">
+    Host PC configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/edit/master/docs/build_apps.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Build apps without firmware</h1>
+                
+                <h2 id="build-applications-without-building-the-firmware">Build applications without building the firmware<a class="headerlink" href="#build-applications-without-building-the-firmware" title="Permanent link">&para;</a></h2>
+<p>If you do not want to compile the complete firmware image, but still want to make changes to the basestation/client,
+use this guide for how to cross-compile the applications.</p>
+<p>If you already have the Xilinx SDK installed, you can skip the first step.</p>
+<h3 id="1-get-arm-toolchain-and-pluto-sysroot">1. Get arm toolchain and pluto sysroot<a class="headerlink" href="#1-get-arm-toolchain-and-pluto-sysroot" title="Permanent link">&para;</a></h3>
+<p>First, the arm toolchain has to be installed. Again, a more detailed instruction
+can be found here https://wiki.analog.com/university/tools/pluto/devs/embedded_code</p>
+<p>We use linaro toolchain 7.2-2017.11.</p>
+<p>Download it from here (I've used x86_64 version):
+http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabihf/</p>
+<p>unpack it and copy it to /usr/local/bin/</p>
+<div class="codehilite"><pre><span></span><code>tar -xf gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz
+sudo mv gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf/ /usr/local/bin/gcc-linaro-7.2.1
+</code></pre></div>
+
+
+<p>Next, add the toolchain location to the path variable. To make this permanent, edit
+<code>~/.profile</code> and add the following lines:</p>
+<div class="codehilite"><pre><span></span><code># add linaro gcc to path
+export PATH=$PATH:/usr/local/bin/gcc-linaro-7.2.1/bin
+</code></pre></div>
+
+
+<p>Log off and on to apply the changes.</p>
+<p>To successfully cross-compile, the pluto root directory has to be known. We use a custom sysroot, that
+can be fetched in the release section of the <a href="https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases">repository</a>.</p>
+<p>Download it and copy the folder to your home directory.</p>
+<h3 id="2-compile-libraries">2. compile libraries<a class="headerlink" href="#2-compile-libraries" title="Permanent link">&para;</a></h3>
+<p>We have to compile libfftw on our own, because liquid-dsp requires
+the single precision fftw3 lib, but adalm pluto only has the double precision version
+installed by default.</p>
+<p>Get the tarball from http://fftw.org/download.html and unpack it.</p>
+<div class="codehilite"><pre><span></span><code>./configure --host=arm-linux-gnueabihf --enable-float --enable-shared --prefix=&quot;$HOME/pluto-0.31.sysroot/usr/&quot; CC=&quot;arm-linux-gnueabihf-gcc --sysroot=$HOME/pluto-0.31.sysroot/&quot;
+make
+make install
+</code></pre></div>
+
+
+<p>This will install the shared library to the sysroot directory.</p>
+<p>libfec and liquid-dsp can be configured and cross-compiled with the follwing commands</p>
+<div class="codehilite"><pre><span></span><code>cd &lt;libfec/liquid-dsp&gt;
+./configure arm --host=arm-linux-gnueabihf  --prefix=&quot;$HOME/pluto-0.31.sysroot/usr/&quot; CC=&quot;arm-linux-gnueabihf-gcc --sysroot=$HOME/pluto-0.31.sysroot/&quot;
+
+&lt;see note below for liquid-dsp&gt;
+make
+make install
+</code></pre></div>
+
+
+<p>NOTE: For liquid-dsp, the configure script does not correctly detect malloc and realloc C functions, and thus make fails! Use these command to fix this:</p>
+<div class="codehilite"><pre><span></span><code>sed -i &#39;/rpl_realloc/d&#39; config.h
+sed -i &#39;/rpl_malloc/d&#39; config.h
+</code></pre></div>
+
+
+<p>Then, run make &amp;&amp; make install.</p>
+<h3 id="3-compile-apps">3. compile apps<a class="headerlink" href="#3-compile-apps" title="Permanent link">&para;</a></h3>
+<p>The apps are built using cmake. The target names are basestation client and client-calib.</p>
+<div class="codehilite"><pre><span></span><code>mkdir cmake-build-release-arm
+cd cmake-build-release-arm
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=CmakeArmToolchain.cmake ..
+make basestation
+make client
+make client-calib
+</code></pre></div>
+
+
+<h3 id="4-upload-everything-to-pluto">4. Upload everything to pluto<a class="headerlink" href="#4-upload-everything-to-pluto" title="Permanent link">&para;</a></h3>
+<p>Configure your Host PC as described in the <strong>Host PC configuration</strong> section.</p>
+<p>To upload applications, do:</p>
+<div class="codehilite"><pre><span></span><code>cd transceiver/cmake-build-release-arm/
+scp basestation client client-calib plutosdr:/root/
+</code></pre></div>
+
+
+<p>Now, you can log in to the pluto and run the applications. They are located in /root/.</p>
+<p>Note: every time Pluto reboots, The changed application files are lost. To make the changes
+permanent, the firmware image has to be changed.</p>
+<h2 id="host-pc-configuration">Host PC configuration<a class="headerlink" href="#host-pc-configuration" title="Permanent link">&para;</a></h2>
+<p>In order to ease development with multiple plutos connected to your PC, you can configure your ssh client.</p>
+<p>The host key of the pluto changes every time the device reboots, so for convenience
+add the follwing to <code>~/.ssh/config</code>:</p>
+<div class="codehilite"><pre><span></span><code>Host plutosdr
+   HostName 192.168.2.1
+   HostKeyAlias plutosdr
+   StrictHostKeyChecking=no
+   CheckHostIP no
+   User root
+   ChallengeResponseAuthentication no
+</code></pre></div>
+
+
+<p>Then the device can be accessed with <code>ssh plutosdr</code> (password: analog).</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../build_simulation/" title="Build the simulation target" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Build the simulation target
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../system_config/" title="System Configuration" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                System Configuration
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/HAMNET-Access-Protocol" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7a2ea5ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
