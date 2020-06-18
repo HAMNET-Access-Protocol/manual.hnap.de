@@ -166,8 +166,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../prerequesites/" title="Prerequesites" class="md-nav__link">
-      Prerequesites
+    <a href="../prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
     </a>
   </li>
 
@@ -426,7 +426,7 @@ The configuration is split into currently three parts: PHY layer, Platform and l
 The default configuration is given in config.txt in this repo.</p>
 <p>The configuration file can be used by passing the <code>-c &lt;config-file&gt;</code> parameter to the applications.</p>
 <h3 id="frequency-offset-calibration">Frequency offset calibration<a class="headerlink" href="#frequency-offset-calibration" title="Permanent link">&para;</a></h3>
-<p>The default pluto TCXO has a bad accuracy and might need some initial
+<p>The default Pluto TCXO has a bad accuracy and might need some initial
 calibration. The client and the client calib tool perform an initial
 cfo estimation and retune the transceiver to the correct carrier frequency.</p>
 <p>However, the offset estimation only works in a range of +-2Khz, the default TCXO
@@ -438,9 +438,12 @@ recalibrate the XO in steps of 100Hz and test until the client finds sync.</p>
 <p>Instead of tweaking the TCXO, you can also specify the frequency of the client with the
 <code>-f</code> flag. The default DL carrier is located at 439.7 MHz, try frequencies nearby if your client
 cannot get sync.</p>
-<p><strong>NOTE:</strong> in the first minutes after the pluto started, the frequency offset varies by somtimes
-multiple Khz. Let the Pluto run and heat up for some minutes, if you cannot find a constant
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the first minutes after the Pluto started, the frequency offset varies by sometimes
+multiple kHz. Let the Pluto run and heat up for some minutes, if you cannot find a constant
 offset. The offset will settle after a while.</p>
+</div>
                 
               
               

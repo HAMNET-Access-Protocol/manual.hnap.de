@@ -166,8 +166,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../prerequesites/" title="Prerequesites" class="md-nav__link">
-      Prerequesites
+    <a href="../prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
     </a>
   </li>
 
@@ -514,7 +514,7 @@ directory.</p>
 <h2 id="client-arguments">Client Arguments<a class="headerlink" href="#client-arguments" title="Permanent link">&para;</a></h2>
 <h3 id="modulation-and-coding-scheme">Modulation and Coding scheme<a class="headerlink" href="#modulation-and-coding-scheme" title="Permanent link">&para;</a></h3>
 <p>The system uses QAM modulation and convolutional coding at the PHY layer.
-By default, MCS0 (QPSK, 1/2rate code) is used. You can manually set other
+By default, MCS 0 (QPSK, 1/2 rate code) is used. You can manually set other
 MCS values for uplink and downlink as an argument to the client application.
 Downlink MCS can be set with the <code>-d</code> or
 <code>--dl-mcs</code> flag. Uplink MCS can be set with the <code>-u</code> or <code>--ul-mcs</code> flag.</p>
@@ -574,25 +574,33 @@ Downlink MCS can be set with the <code>-d</code> or
 </tbody>
 </table>
 <h3 id="gain">Gain<a class="headerlink" href="#gain" title="Permanent link">&para;</a></h3>
-<p>By default the rxgain is automatically set during startup-phase and adapted
+<p>By default the RXGAIN is automatically set during startup-phase and adapted
 during runtime of the client. If you want to manually fix the gain, use the <code>-g</code> flag.
-The gain can be set in the range of [0 73].</p>
+The gain can be set in the range of [0...73].</p>
 <p>The application <code>client-calib</code> can be used to read the current signal level
 of the application. It prints the absolute amplitudes of the I and Q path and the calculated
-rssi. RXgain should be set to keep the RSSI at ~-15dB.</p>
+rssi. RXGAIN should be set to keep the RSSI at ~-15dB.</p>
 <p><code>./client-calib -g &lt;rxgain&gt;</code></p>
-<p>The txgain of the client is automatically set, assuming a symmetrical UL and DL link.
+<p>The TXGAIN of the client is automatically set, assuming a symmetrical UL and DL link.
 It is calculated from RX and TX gain broadcasts that the basestation sends and the
-rxgain that the client calculated:</p>
+RXGAIN that the client calculated:</p>
 <p><code>txgain_client = bs_txgain + rxgain_client - bs_rxgain</code></p>
-<p>In the current implementation, neither the rxgain of the basestation nor the
-txgain of a client are adaptive. This feature still has to be implemented.</p>
+<p>In the current implementation, neither the RXGAIN of the basestation nor the
+TXGAIN of a client are adaptive. This feature still has to be implemented.</p>
 <h3 id="carrier-frequency">Carrier frequency<a class="headerlink" href="#carrier-frequency" title="Permanent link">&para;</a></h3>
 <p>You can specify the carrier frequency of the downlink channel with the <code>-f</code> parameter.
-The frequency is given in Hz. The uplink frequency is automatically calculated (4.8MHz shift).</p>
+The frequency is given in Hz. The uplink frequency is automatically calculated (4.8 MHz shift).</p>
 <h3 id="log-level">Log level<a class="headerlink" href="#log-level" title="Permanent link">&para;</a></h3>
-<p>Define the log level of the application with the <code>-l</code> parameter.<br />
-0=TRACE 1=DEBUG 2=INFO 3=WARN 4=ERR 5=NONE</p>
+<p>Define the log level of the application with the <code>-l</code> parameter.  </p>
+<div class="codehilite"><pre><span></span><code>0=TRACE  
+1=DEBUG  
+2=INFO  
+3=WARN  
+4=ERR  
+5=NONE
+</code></pre></div>
+
+
 <h3 id="configuration-file">Configuration file<a class="headerlink" href="#configuration-file" title="Permanent link">&para;</a></h3>
 <p>The OFDM system can be customized. You can define your own pilot allocation scheme, redefine the number
 of data subcarriers and much more. See <a href="advanced_config">Advanced config</a> for more information.</p>

@@ -166,8 +166,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../prerequesites/" title="Prerequesites" class="md-nav__link">
-      Prerequesites
+    <a href="../prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
     </a>
   </li>
 
@@ -449,8 +449,8 @@ open another SSH connection and test the HNAP connection with <em>ping</em> or <
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>If the client is not able to connect to the basestation, the following might help:</p>
 <p><strong>Make sure the second CPU core is active</strong></p>
-<p>Verify it with <code>fw_printenv maxcpus</code>. Without the second core, no realtime operation
-is possible.</p>
+<p>Verify it with <code>fw_printenv maxcpus</code> and set up according to <a href="../installation#cpu-setup">here</a>.
+Without the second core, no realtime operation is possible.</p>
 <p><strong>Use correct antennas for the used band</strong></p>
 <p>The Pluto does not come with any analog filters after/before the mixing stage.
 We therefore produce strong intermodulation products (e.g. output with -10dBc @1.31GHz).

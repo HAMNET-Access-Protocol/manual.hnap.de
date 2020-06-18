@@ -166,8 +166,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../prerequesites/" title="Prerequesites" class="md-nav__link">
-      Prerequesites
+    <a href="../prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
     </a>
   </li>
 
@@ -508,11 +508,9 @@ use this guide for how to cross-compile the applications.</p>
 <p>If you already have the Xilinx SDK installed, you can skip the first step.</p>
 <h3 id="1-get-arm-toolchain-and-pluto-sysroot">1. Get arm toolchain and pluto sysroot<a class="headerlink" href="#1-get-arm-toolchain-and-pluto-sysroot" title="Permanent link">&para;</a></h3>
 <p>First, the arm toolchain has to be installed. Again, a more detailed instruction
-can be found here https://wiki.analog.com/university/tools/pluto/devs/embedded_code</p>
-<p>We use linaro toolchain 7.2-2017.11.</p>
-<p>Download it from here (I've used x86_64 version):
-http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabihf/</p>
-<p>unpack it and copy it to /usr/local/bin/</p>
+can be found <a href="https://wiki.analog.com/university/tools/pluto/devs/embedded_code">here</a>.</p>
+<p>We use linaro toolchain 7.2-2017.11, download it from <a href="http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabihf/">here</a> (I've used x86_64 version).</p>
+<p>Unpack it and copy it to /usr/local/bin/</p>
 <div class="codehilite"><pre><span></span><code>tar -xf gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz
 sudo mv gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf/ /usr/local/bin/gcc-linaro-7.2.1
 </code></pre></div>
@@ -533,7 +531,7 @@ can be fetched in the release section of the <a href="https://github.com/HAMNET-
 <p>We have to compile libfftw on our own, because liquid-dsp requires
 the single precision fftw3 lib, but adalm pluto only has the double precision version
 installed by default.</p>
-<p>Get the tarball from http://fftw.org/download.html and unpack it.</p>
+<p>Get the tarball from <a href="http://fftw.org/download.html">http://fftw.org/download.html</a> and unpack it.</p>
 <div class="codehilite"><pre><span></span><code>./configure --host=arm-linux-gnueabihf --enable-float --enable-shared --prefix=&quot;$HOME/pluto-0.31.sysroot/usr/&quot; CC=&quot;arm-linux-gnueabihf-gcc --sysroot=$HOME/pluto-0.31.sysroot/&quot;
 make
 make install
