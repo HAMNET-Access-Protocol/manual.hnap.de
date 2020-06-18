@@ -3,26 +3,28 @@ This section will help you to create a custom firmware that includes all librari
 the HNAP transceiver.
 In order to guarantee a stable operation at high data-rates, the we use the linux realtime kernel patch. The following guide includes all steps to create a custom RT linux firmware with all necessary configurations for running as a client or as basestation.
 
-### Prerequesites
+### Prerequisites
 In order to be able to build the firmware, Xilinx Vivado Webpack 2018.2 has to be installed.
-Get it from here https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html.
-Version 2018.2 is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
+Get it from [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html).  
+Version **2018.2** is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
 During the software install, make sure the SDK and the Zynq 7000 software parts are installed (all other parts can be unselected).
 
 This guide assumes that you install Vivado and the SDK into `/opt/Xilinx/`.
 
 To be able to compile the C applications, we need the pluto sysroot structure. The most recent
 firmware and application require additional libraries. The pluto-sysroot folder that includes the
-include files for these libs can be found under [releases](https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases) in the repository: pluto-sysroot-0.31-mod.
-copy the directory to `~/pluto-0.31.sysroot`.
+include files for these libs can be found under [releases](https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases) in the repository: pluto-sysroot-0.31-mod.  
+Copy the directory to `~/pluto-0.31.sysroot`.
 
 
 ### Download the firmware sources
 Clone the pluto firmware repository
-`git clone --recursive https://github.com/analogdevicesinc/plutosdr-fw.git`
+```
+git clone --recursive https://github.com/analogdevicesinc/plutosdr-fw.git
+```
 
 Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.14.0.
-The corresponding patch is patch-4.14-rt1.patch.gz from here: https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/
+The corresponding patch is patch-4.14-rt1.patch.gz from here: [https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/](https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/)
 
 The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:
 ```
@@ -41,7 +43,7 @@ cd plutosdr-fw/linux/
 patch -p1 < /path-to-patch/patch-4.14-rt1.patch
 ```
 
-Now we will configure the linux kernel. This can be done with menuconfig.
+Now we will configure the linux kernel. This can be done with menuconfig.  
 First, load the kernel config for the pluto device:
 
 ```

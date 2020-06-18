@@ -16,7 +16,7 @@ directory.
 ### Modulation and Coding scheme
 
 The system uses QAM modulation and convolutional coding at the PHY layer.
-By default, MCS0 (QPSK, 1/2rate code) is used. You can manually set other
+By default, MCS 0 (QPSK, 1/2 rate code) is used. You can manually set other
 MCS values for uplink and downlink as an argument to the client application.
 Downlink MCS can be set with the `-d` or
 `--dl-mcs` flag. Uplink MCS can be set with the `-u` or `--ul-mcs` flag.
@@ -35,35 +35,44 @@ The following MCS have been defined
 
 ### Gain
 
-By default the rxgain is automatically set during startup-phase and adapted
+By default the RXGAIN is automatically set during startup-phase and adapted
 during runtime of the client. If you want to manually fix the gain, use the `-g` flag.
-The gain can be set in the range of [0 73].
+The gain can be set in the range of [0...73].
  
 The application `client-calib` can be used to read the current signal level
 of the application. It prints the absolute amplitudes of the I and Q path and the calculated
-rssi. RXgain should be set to keep the RSSI at ~-15dB.
+rssi. RXGAIN should be set to keep the RSSI at ~-15dB.
 
 `./client-calib -g <rxgain>`
 
-The txgain of the client is automatically set, assuming a symmetrical UL and DL link.
+The TXGAIN of the client is automatically set, assuming a symmetrical UL and DL link.
 It is calculated from RX and TX gain broadcasts that the basestation sends and the
-rxgain that the client calculated:
+RXGAIN that the client calculated:
 
 `txgain_client = bs_txgain + rxgain_client - bs_rxgain`
 
-In the current implementation, neither the rxgain of the basestation nor the
-txgain of a client are adaptive. This feature still has to be implemented.
+In the current implementation, neither the RXGAIN of the basestation nor the
+TXGAIN of a client are adaptive. This feature still has to be implemented.
 
 ### Carrier frequency
 
 You can specify the carrier frequency of the downlink channel with the `-f` parameter.
-The frequency is given in Hz. The uplink frequency is automatically calculated (4.8MHz shift).
+The frequency is given in Hz. The uplink frequency is automatically calculated (4.8 MHz shift).
 
 ### Log level
+
 Define the log level of the application with the `-l` parameter.  
-0=TRACE 1=DEBUG 2=INFO 3=WARN 4=ERR 5=NONE
+
+```
+0=TRACE  
+1=DEBUG  
+2=INFO  
+3=WARN  
+4=ERR  
+5=NONE
+```
+
 ### Configuration file
+
 The OFDM system can be customized. You can define your own pilot allocation scheme, redefine the number
 of data subcarriers and much more. See [Advanced config](advanced_config) for more information.
-
-

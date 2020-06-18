@@ -9,7 +9,7 @@ The configuration file can be used by passing the `-c <config-file>` parameter t
 
 ### Frequency offset calibration
 
-The default pluto TCXO has a bad accuracy and might need some initial
+The default Pluto TCXO has a bad accuracy and might need some initial
 calibration. The client and the client calib tool perform an initial
 cfo estimation and retune the transceiver to the correct carrier frequency.
 
@@ -28,6 +28,7 @@ Instead of tweaking the TCXO, you can also specify the frequency of the client w
 cannot get sync.
 
 
-**NOTE:** in the first minutes after the pluto started, the frequency offset varies by somtimes
-multiple Khz. Let the Pluto run and heat up for some minutes, if you cannot find a constant
-offset. The offset will settle after a while.
+!!! Note
+    In the first minutes after the Pluto started, the frequency offset varies by sometimes
+    multiple kHz. Let the Pluto run and heat up for some minutes, if you cannot find a constant
+    offset. The offset will settle after a while.

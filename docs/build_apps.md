@@ -7,14 +7,11 @@ If you already have the Xilinx SDK installed, you can skip the first step.
 
 ### 1. Get arm toolchain and pluto sysroot
 First, the arm toolchain has to be installed. Again, a more detailed instruction
-can be found here https://wiki.analog.com/university/tools/pluto/devs/embedded_code
+can be found [here](https://wiki.analog.com/university/tools/pluto/devs/embedded_code).
 
-We use linaro toolchain 7.2-2017.11.
+We use linaro toolchain 7.2-2017.11, download it from [here](http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabihf/) (I've used x86_64 version).
 
-Download it from here (I've used x86_64 version):
-http://releases.linaro.org/components/toolchain/binaries/7.2-2017.11/arm-linux-gnueabihf/
-
-unpack it and copy it to /usr/local/bin/
+Unpack it and copy it to /usr/local/bin/
 
 ```
 tar -xf gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz
@@ -41,7 +38,7 @@ We have to compile libfftw on our own, because liquid-dsp requires
 the single precision fftw3 lib, but adalm pluto only has the double precision version
 installed by default.
 
-Get the tarball from http://fftw.org/download.html and unpack it.
+Get the tarball from [http://fftw.org/download.html](http://fftw.org/download.html) and unpack it.
 
 ```
 ./configure --host=arm-linux-gnueabihf --enable-float --enable-shared --prefix="$HOME/pluto-0.31.sysroot/usr/" CC="arm-linux-gnueabihf-gcc --sysroot=$HOME/pluto-0.31.sysroot/"

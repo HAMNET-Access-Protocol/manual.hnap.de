@@ -19,8 +19,8 @@ If the client is not able to connect to the basestation, the following might hel
 
 **Make sure the second CPU core is active**
 
-Verify it with `fw_printenv maxcpus`. Without the second core, no realtime operation
-is possible.
+Verify it with `fw_printenv maxcpus` and set up according to [here](../installation#cpu-setup).
+Without the second core, no realtime operation is possible.
 
 **Use correct antennas for the used band**
 
