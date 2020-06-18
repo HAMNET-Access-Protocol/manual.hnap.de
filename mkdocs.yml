@@ -42,3 +42,6 @@ nav:
     - Build the simulation target: build_simulation.md
     - Build apps without firmware: build_apps.md
   - System Configuration: system_config.md
+  - Chainging the TCXO: tcxo_change.md
+  - Documentation:
+    - Callsign Distribution: documentation/callsign.md
