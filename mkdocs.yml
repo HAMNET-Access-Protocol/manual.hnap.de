@@ -37,11 +37,17 @@ markdown_extensions:
       permalink: true
 nav:
   - Home: index.md
-  - Build&Install:
+  - Prerequesites: prerequesites.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Configuration: system_config.md
+
+  - Development:
+    - Advanced Configuration: advanced_config.md
     - Building the Firmware: building_the_fw.md
     - Build the simulation target: build_simulation.md
     - Build apps without firmware: build_apps.md
-  - System Configuration: system_config.md
-  - Chainging the TCXO: tcxo_change.md
+
   - Documentation:
     - Callsign Distribution: documentation/callsign.md
+
