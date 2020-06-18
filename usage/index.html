@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://manual.hnap.de/building_the_fw/">
+        <link rel="canonical" href="https://manual.hnap.de/usage/">
       
       
       <link rel="shortcut icon" href="../assets/favicon.ico">
@@ -17,7 +17,7 @@
     
     
       
-        <title>Building the Firmware - manual.hnap.de</title>
+        <title>Usage - manual.hnap.de</title>
       
     
     
@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-the-pluto-firmware" class="md-skip">
+        <a href="#troubleshooting" class="md-skip">
           Skip to content
         </a>
       
@@ -85,7 +85,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Building the Firmware
+              Usage
             
           </span>
         </div>
@@ -188,11 +188,56 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../usage/" title="Usage" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Usage
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Usage" class="md-nav__link md-nav__link--active">
       Usage
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -212,12 +257,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Development
@@ -251,90 +294,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Building the Firmware
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Building the Firmware" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../building_the_fw/" title="Building the Firmware" class="md-nav__link">
       Building the Firmware
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-the-pluto-firmware" class="md-nav__link">
-    Creating the pluto firmware
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating the pluto firmware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequesites" class="md-nav__link">
-    Prerequesites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#download-the-firmware-sources" class="md-nav__link">
-    Download the firmware sources
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-the-linux-kernel" class="md-nav__link">
-    Configure the linux kernel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-the-userspace-apps" class="md-nav__link">
-    Configure the userspace apps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-the-firmware" class="md-nav__link">
-    Building the firmware
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -433,50 +397,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-the-pluto-firmware" class="md-nav__link">
-    Creating the pluto firmware
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating the pluto firmware">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequesites" class="md-nav__link">
-    Prerequesites
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#download-the-firmware-sources" class="md-nav__link">
-    Download the firmware sources
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    What's next?
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-the-linux-kernel" class="md-nav__link">
-    Configure the linux kernel
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure-the-userspace-apps" class="md-nav__link">
-    Configure the userspace apps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#building-the-firmware" class="md-nav__link">
-    Building the firmware
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -492,7 +422,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/edit/master/docs/building_the_fw.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/edit/master/docs/usage.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -500,114 +430,45 @@
                   
                 
                 
-                  <h1>Building the Firmware</h1>
+                  <h1>Usage</h1>
                 
-                <h2 id="creating-the-pluto-firmware">Creating the pluto firmware<a class="headerlink" href="#creating-the-pluto-firmware" title="Permanent link">&para;</a></h2>
-<p>This section will help you to create a custom firmware that includes all libraries, apps and autoconfiguration scripts for operating
-the HNAP transceiver.
-In order to guarantee a stable operation at high data-rates, the we use the linux realtime kernel patch. The following guide includes all steps to create a custom RT linux firmware with all necessary configurations for running as a client or as basestation.</p>
-<h3 id="prerequesites">Prerequesites<a class="headerlink" href="#prerequesites" title="Permanent link">&para;</a></h3>
-<p>In order to be able to build the firmware, Xilinx Vivado Webpack 2018.2 has to be installed.
-Get it from here https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html.
-Version 2018.2 is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
-During the software install, make sure the SDK and the Zynq 7000 software parts are installed (all other parts can be unselected).</p>
-<p>This guide assumes that you install Vivado and the SDK into <code>/opt/Xilinx/</code>.</p>
-<p>To be able to compile the C applications, we need the pluto sysroot structure. The most recent
-firmware and application require additional libraries. The pluto-sysroot folder that includes the
-include files for these libs can be found under <a href="https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases">releases</a> in the repository: pluto-sysroot-0.31-mod.
-copy the directory to <code>~/pluto-0.31.sysroot</code>.</p>
-<h3 id="download-the-firmware-sources">Download the firmware sources<a class="headerlink" href="#download-the-firmware-sources" title="Permanent link">&para;</a></h3>
-<p>Clone the pluto firmware repository
-<code>git clone --recursive https://github.com/analogdevicesinc/plutosdr-fw.git</code></p>
-<p>Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.14.0.
-The corresponding patch is patch-4.14-rt1.patch.gz from here: https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/</p>
-<p>The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:</p>
-<div class="codehilite"><pre><span></span><code>$ cd plutosdr-fw/
-$ make -C linux ARCH=arm zynq_pluto_defconfig
-$ make -C linux ARCH=arm menuconfig
+                <p>Once you have installed the application and performed the initial system configuration, you can test the system.
+Your basestation should start automatically once it is connected to power. In order to start you client log
+into the system via SSH and do:</p>
+<div class="codehilite"><pre><span></span><code>./client
 </code></pre></div>
 
 
-<p>A menuconfig window should appear with the linux kernel version in the title.</p>
-<h3 id="configure-the-linux-kernel">Configure the linux kernel<a class="headerlink" href="#configure-the-linux-kernel" title="Permanent link">&para;</a></h3>
-<p>Unpack the patch. Then apply it:</p>
-<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/linux/
-patch -p1 &lt; /path-to-patch/patch-4.14-rt1.patch
+<p>The client should start up and connect to the basestation. Once this is done,
+open another SSH connection and test the HNAP connection with <em>ping</em> or <em>iperf</em>.</p>
+<p>Every Pluto starts an iperf3 server by default, so simply run:</p>
+<div class="codehilite"><pre><span></span><code>iperf3 -c 192.168.123.1 -R
 </code></pre></div>
 
 
-<p>Now we will configure the linux kernel. This can be done with menuconfig.
-First, load the kernel config for the pluto device:</p>
-<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/
-make -C linux ARCH=arm zynq_pluto_defconfig
-</code></pre></div>
-
-
-<p>Then edit it with menuconfig:</p>
-<div class="codehilite"><pre><span></span><code>make -C linux ARCH=arm menuconfig
-</code></pre></div>
-
-
-<p>You will have do make the following changes:</p>
-<ul>
-<li>Go to: Kernel Features ---&gt; Preemption Model ---&gt; select Fully Preemptible Kernel (RT)</li>
-<li>Go to: Device Drivers ---&gt; Network device support ---&gt; Universal TUN/TAP device driver support. Type 'Y' to activate</li>
-</ul>
-<p>If you cannot find the entries, do a search by typing '/' and go to the search result by typing the result number, e.g. '1'.</p>
-<p>Go to 'Save' and use <code>arch/arm/configs/zynq_pluto_defconfig</code> to overwrite the default zynq_pluto configuration.</p>
-<h3 id="configure-the-userspace-apps">Configure the userspace apps<a class="headerlink" href="#configure-the-userspace-apps" title="Permanent link">&para;</a></h3>
-<p>Next, we will activate some useful userspace apps in buildroot. Load the pluto default configuration.</p>
-<div class="codehilite"><pre><span></span><code>make -C buildroot ARCH=arm zynq_pluto_defconfig
-make -C buildroot ARCH=arm menuconfig
-</code></pre></div>
-
-
-<p>Its the easiest to search for the apps with '/', select the result (e.g. '1') and activate it with 'y'.</p>
-<ul>
-<li><strong>tunctl</strong>. Required. Must be installed to configgure the tap device</li>
-<li><strong>fftw-single</strong>. Required. Search term 'single'. We need the single precision fftw library. Make sure to select 'BR2_PACKAGE_FFTW_SINGLE' and  not the legacy option.</li>
-<li><strong>libconfig</strong>. Required. Search term 'libconfig'. A library to parse configuration files.</li>
-<li><strong>lldpd</strong>. Required. Link Layer Discovery protocol. Used to broadcast callsigns.</li>
-<li><strong>iperf3</strong>. Optional but recommended. Useful for bandwidth tests.</li>
-<li><strong>tcpdump</strong>+<strong>gdb</strong> Optional. Useful for debugging.</li>
-</ul>
-<p>For me, the External toolchain kernel header version was not correctly configured. If this is not correctly set, building the firmware will fail.
-I had to set kernel header series 4.10.x, previously it was at 4.9.x. You can do this under 'Toolchain ---&gt; External toolchain kernel headers series'.</p>
-<p>In order to preinstall our own applications, we will create a rootfs overlay folder and tell buildroot to overlay this folder over the created filesystem.
-Activate this with:</p>
-<ul>
-<li><code>System configuration ---&gt; Root filesystem overlay directories</code></li>
-</ul>
-<p>I choose <code>/home/lukas/plutosdr-fw/rootfs-overlay/</code>, keep in mind the chosen directory name when creating the overlay in the next steps.</p>
-<p>Save the configuration by using the default path. Then overwrite the pluto target config with the following command:</p>
-<div class="codehilite"><pre><span></span><code>make -C buildroot savedefconfig
-</code></pre></div>
-
-
-<p>Now we will fill the rootfs-overlay directory.
-The git repository containing this readme comes with a script <code>config-firmware.sh</code>. It should do everything on its own.
-Before you run it, edit it and check that the Variables <code>PLUTOSDR_FW_ROOTOVERLAY</code> and <code>PLUTO_SYSROOT_DIR</code> point to the correct paths.</p>
-<p>Also, verify that <code>transceiver/CmakeArmToolchain.cmake</code> uses the correct sysroot path and the correct Xilinx toolchain path.</p>
-<p>Then run:</p>
-<div class="codehilite"><pre><span></span><code>./config-firmware.sh
-</code></pre></div>
-
-
-<p>The script will build all dependent libraries (libfec, liquid-dsp) and the C applications. Then it fills the rootoverlay with the applications, some startup scripts and FIR filter coefficients that we use.</p>
-<h3 id="building-the-firmware">Building the firmware<a class="headerlink" href="#building-the-firmware" title="Permanent link">&para;</a></h3>
-<p>Now everything is set up to build the firmware image:</p>
-<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/
-make
-</code></pre></div>
-
-
-<p>That's it.</p>
-<p>If you get an error like</p>
-<blockquote>
-<p>Incorrect selection of kernel headers: expected 4.9.x, got 4.10.x</p>
-</blockquote>
-<p>Go back to the buildroot userspace configuration and set the toolchain kernel headers to version 4.10.x. Make sure to save the configuration.</p>
-<p>After the build finished, the firmware image can be found in <code>plutosdr-fw/build/pluto.frm</code>.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>If the client is not able to connect to the basestation, the following might help:</p>
+<p><strong>Make sure the second CPU core is active</strong></p>
+<p>Verify it with <code>fw_printenv maxcpus</code>. Without the second core, no realtime operation
+is possible.</p>
+<p><strong>Use correct antennas for the used band</strong></p>
+<p>The Pluto does not come with any analog filters after/before the mixing stage.
+We therefore produce strong intermodulation products (e.g. output with -10dBc @1.31GHz).
+These products will be mixed down to the baseband at the receiver and interfere with our signal. 
+Use UHF antennas in order to suppress the intermodulation products. DO NOT use the original 2.4GHz antennas! They just
+recept the intermodulation products, but not the original signal at 440MHz.</p>
+<p><strong>Adjust the carrier frequency</strong></p>
+<p>The default TCXO on the Adalm Pluto has an accuracy of 25ppm. At 440MHz, this can result
+in a frequency offset of up to 10kHz. The application can only detect and compensate +-2kHz, we therefore
+strongly suggest to switch to a more accurate TCXO (more details here TODO!).</p>
+<p>If you do not want to swap the TCXO immediately, try the following:
+1. Let the Pluto heat up a bit. The frequency drift is very high in the first minutes of operation. Wait some minutes for the offset to settle.
+2. Adjust the frequency offset manually. Run <code>./client -f 439702000</code> to tune to higher and lower carrier frequencies. Do this in 2kHz steps 
+around the default frequency of 439700000. There is a calibration tool <em>client-calib</em> that only syncs to the Downlink and 
+estimates the carrier offset that might help: <code>./client-calib -f &lt;DL-FREQ&gt;</code></p>
+<h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>Get higher data-rates by changing the modulation coding scheme: <a href="system_config">here</a></p>
+<p>Read how to build the firmware yourself <a href="https://manual.hnap.de/building_the_fw/">here</a></p>
                 
               
               
@@ -626,7 +487,7 @@ make
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../advanced_config/" title="Advanced Configuration" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../installation/" title="Installation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -635,19 +496,19 @@ make
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Advanced Configuration
+                Installation
               </div>
             </div>
           </a>
         
         
-          <a href="../build_simulation/" title="Build the simulation target" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../system_config/" title="Configuration" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Build the simulation target
+                Configuration
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
