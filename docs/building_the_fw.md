@@ -55,6 +55,7 @@ make -C linux ARCH=arm menuconfig
 ```
 
 You will have do make the following changes:
+
 - Go to: Kernel Features ---> Preemption Model ---> select Fully Preemptible Kernel (RT)
 - Go to: Device Drivers ---> Network device support ---> Universal TUN/TAP device driver support. Type 'Y' to activate
 
@@ -71,6 +72,7 @@ make -C buildroot ARCH=arm menuconfig
 ```
 
 Its the easiest to search for the apps with '/', select the result (e.g. '1') and activate it with 'y'.
+
 - **tunctl**. Required. Must be installed to configgure the tap device
 - **fftw-single**. Required. Search term 'single'. We need the single precision fftw library. Make sure to select 'BR2_PACKAGE_FFTW_SINGLE' and  not the legacy option.
 - **libconfig**. Required. Search term 'libconfig'. A library to parse configuration files.
@@ -83,6 +85,7 @@ I had to set kernel header series 4.10.x, previously it was at 4.9.x. You can do
 
 In order to preinstall our own applications, we will create a rootfs overlay folder and tell buildroot to overlay this folder over the created filesystem.
 Activate this with:
+
 - `System configuration ---> Root filesystem overlay directories`
 
 I choose `/home/lukas/plutosdr-fw/rootfs-overlay/`, keep in mind the chosen directory name when creating the overlay in the next steps.
