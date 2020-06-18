@@ -74,6 +74,7 @@ Its the easiest to search for the apps with '/', select the result (e.g. '1') an
 - **tunctl**. Required. Must be installed to configgure the tap device
 - **fftw-single**. Required. Search term 'single'. We need the single precision fftw library. Make sure to select 'BR2_PACKAGE_FFTW_SINGLE' and  not the legacy option.
 - **libconfig**. Required. Search term 'libconfig'. A library to parse configuration files.
+- **lldpd**. Required. Link Layer Discovery protocol. Used to broadcast callsigns.
 - **iperf3**. Optional but recommended. Useful for bandwidth tests.
 - **tcpdump**+**gdb** Optional. Useful for debugging.
 
