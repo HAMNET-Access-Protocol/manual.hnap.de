@@ -9,7 +9,7 @@ The first part will help you to get the system running and do some configuration
 dedicated to developers who want to modify and build the whole system themselves.
 
 ## User guide
-Start [here](prerequesites)!
+Start [here](prerequisites)!
 
 ## Developer's guide
 
