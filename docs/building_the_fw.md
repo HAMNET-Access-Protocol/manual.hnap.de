@@ -23,8 +23,8 @@ Clone the pluto firmware repository
 git clone --recursive https://github.com/analogdevicesinc/plutosdr-fw.git
 ```
 
-Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.14.0.
-The corresponding patch is patch-4.14-rt1.patch.gz from here: [https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/](https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/)
+Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
+The corresponding patch is patch-4.19-rt1.patch.gz from here: [https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/](https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/)
 
 The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:
 ```
@@ -58,7 +58,7 @@ make -C linux ARCH=arm menuconfig
 
 You will have do make the following changes:
 
-- Go to: Kernel Features ---> Preemption Model ---> select Fully Preemptible Kernel (RT)
+- Go to: General Setup ---> Preemption Model ---> select Fully Preemptible Kernel (RT)
 - Go to: Device Drivers ---> Network device support ---> Universal TUN/TAP device driver support. Type 'Y' to activate
 
 If you cannot find the entries, do a search by typing '/' and go to the search result by typing the result number, e.g. '1'.
@@ -120,9 +120,24 @@ make
 That's it.
 
 If you get an error like
-> Incorrect selection of kernel headers: expected 4.9.x, got 4.10.x
+> Incorrect selection of kernel headers: expected 4.14.x, got 4.10.x
+  Incorrect selection of gcc version: expected 8.x, got 7.2.1
 
-Go back to the buildroot userspace configuration and set the toolchain kernel headers to version 4.10.x. Make sure to save the configuration.
+You have to clean your current buildroot configuration and have to start from scratch with the last saved config.
+Go back to the buildroot userspace configuration and make sure to save the configuration at the end.
+
+In the menuconfig step check your old settings from above and: 
+
+- Go to: Toolchain -> External Toolchain kernel headers series 4.10.x
+- Go to: Toolchain -> External Toolchain gcc version -> 7.x
+```
+cd plutosdr-fw/
+make -C buildroot ARCH=arm clean
+make -C buildroot ARCH=arm zynq_pluto_defconfig
+make -C buildroot ARCH=arm menuconfig
+make -C buildroot savedefconfig
+make
+```
 
 After the build finished, the firmware image can be found in `plutosdr-fw/build/pluto.frm`.
 
