@@ -13,7 +13,7 @@
       
       
       <link rel="shortcut icon" href="../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
+      <meta name="generator" content="mkdocs-1.1.1, mkdocs-material-5.1.6">
     
     
       
@@ -21,9 +21,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6e35a1a6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b9ffd7b.min.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b79bcd20.min.css">
       
       
         
@@ -48,10 +48,8 @@
   
     
     
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="light-blue">
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="light-blue">
   
-    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -522,8 +520,8 @@ Copy the directory to <code>~/pluto-0.31.sysroot</code>.</p>
 </code></pre></div>
 
 
-<p>Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.14.0.
-The corresponding patch is patch-4.14-rt1.patch.gz from here: <a href="https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/">https://kernel.org/pub/linux/kernel/projects/rt/4.14/older/</a></p>
+<p>Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
+The corresponding patch is patch-4.19-rt1.patch.gz from here: <a href="https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/">https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/</a></p>
 <p>The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:</p>
 <div class="codehilite"><pre><span></span><code>$ cd plutosdr-fw/
 $ make -C linux ARCH=arm zynq_pluto_defconfig
@@ -553,7 +551,7 @@ make -C linux ARCH=arm zynq_pluto_defconfig
 
 <p>You will have do make the following changes:</p>
 <ul>
-<li>Go to: Kernel Features ---&gt; Preemption Model ---&gt; select Fully Preemptible Kernel (RT)</li>
+<li>Go to: General Setup ---&gt; Preemption Model ---&gt; select Fully Preemptible Kernel (RT)</li>
 <li>Go to: Device Drivers ---&gt; Network device support ---&gt; Universal TUN/TAP device driver support. Type 'Y' to activate</li>
 </ul>
 <p>If you cannot find the entries, do a search by typing '/' and go to the search result by typing the result number, e.g. '1'.</p>
@@ -607,9 +605,25 @@ make
 <p>That's it.</p>
 <p>If you get an error like</p>
 <blockquote>
-<p>Incorrect selection of kernel headers: expected 4.9.x, got 4.10.x</p>
+<p>Incorrect selection of kernel headers: expected 4.14.x, got 4.10.x
+  Incorrect selection of gcc version: expected 8.x, got 7.2.1</p>
 </blockquote>
-<p>Go back to the buildroot userspace configuration and set the toolchain kernel headers to version 4.10.x. Make sure to save the configuration.</p>
+<p>You have to clean your current buildroot configuration and have to start from scratch with the last saved config.
+Go back to the buildroot userspace configuration and make sure to save the configuration at the end.</p>
+<p>In the menuconfig step check your old settings from above and: </p>
+<ul>
+<li>Go to: Toolchain -&gt; External Toolchain kernel headers series 4.10.x</li>
+<li>Go to: Toolchain -&gt; External Toolchain gcc version -&gt; 7.x</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/
+make -C buildroot ARCH=arm clean
+make -C buildroot ARCH=arm zynq_pluto_defconfig
+make -C buildroot ARCH=arm menuconfig
+make -C buildroot savedefconfig
+make
+</code></pre></div>
+
+
 <p>After the build finished, the firmware image can be found in <code>plutosdr-fw/build/pluto.frm</code>.</p>
                 
               
@@ -690,15 +704,15 @@ make
       
     </div>
     
-      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.7a2ea5ba.min.js"
+            worker: "../assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
