@@ -14,3 +14,16 @@ offsets of up to 10kHz. Only up to +-2kHz can be detected by our system. Additio
 can be too severe to be compensated.
 
 We therefore strongly suggest to switch to a more accurate TCXO. We switched to a 0.5ppm TCXO.
+
+### Amplifier selection
+
+If you run the system for the first time, its best to start without any amplifier. If you want to try one out, here are some basic requirements:
+
+The system is OFDM based, so a linear amplifier is required. The clients in the system operate in half-duplex
+mode, with a short guard time between the slots for switching the amplifier.
+The maximum allowed TX-RX switch time of the amplifier is 265us.
+Currently a PTT signal is generated at the MIO0 Pin of the Adalm Pluto which can be used to drive the amplifier. The pin has
+a voltage level of 1.8V.
+
+We could not yet perform tests including amplifiers, we will update as soon as we have first results.
+

@@ -44,6 +44,6 @@ estimates the carrier offset that might help: `./client-calib -f <DL-FREQ>`
 
 ## What's next?
 
-Get higher data-rates by changing the modulation coding scheme: [here](system_config)
+Get higher data-rates by changing the modulation coding scheme: [here](../system_config)
 
-Read how to build the firmware yourself [here](https://manual.hnap.de/building_the_fw/)
+Read how to build the firmware yourself [here](../building_the_fw)
