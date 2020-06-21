@@ -75,4 +75,4 @@ Define the log level of the application with the `-l` parameter.
 ### Configuration file
 
 The OFDM system can be customized. You can define your own pilot allocation scheme, redefine the number
-of data subcarriers and much more. See [Advanced config](advanced_config) for more information.
+of data subcarriers and much more. See [advanced config](../advanced_config) for more information.
