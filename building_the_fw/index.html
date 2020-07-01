@@ -510,20 +510,27 @@ In order to guarantee a stable operation at high data-rates, the we use the linu
 <p>In order to be able to build the firmware, Xilinx Vivado Webpack 2018.2 has to be installed.
 Get it from <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html">here</a>.<br />
 Version <strong>2018.2</strong> is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
-During the software install, make sure the SDK and the Zynq 7000 software parts are installed (all other parts can be unselected).</p>
+During the software install, make sure the SDK and the Zynq 7000 software parts are installed (all other parts can be unselected).
+You'll still need about 29 GB free disc space for this.</p>
 <p>This guide assumes that you install Vivado and the SDK into <code>/opt/Xilinx/</code>.</p>
 <p>To be able to compile the C applications, we need the pluto sysroot structure. The most recent
 firmware and application require additional libraries. The pluto-sysroot folder that includes the
-include files for these libs can be found under <a href="https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases">releases</a> in the repository: pluto-sysroot-0.31-mod.<br />
-Copy the directory to <code>~/pluto-0.31.sysroot</code>.</p>
+include files for these libs can be found under <a href="https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases">releases</a>: pluto-0.31-mod.sysroot.zip<br />
+Unzip the directory to <code>~/pluto-0.31.sysroot</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~
+wget https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases/download/v1.0.0/pluto-0.31-mod.sysroot.zip
+unzip pluto-0.31-mod.sysroot.zip
+</code></pre></div>
+
+
 <h3 id="download-the-firmware-sources">Download the firmware sources<a class="headerlink" href="#download-the-firmware-sources" title="Permanent link">&para;</a></h3>
-<p>Clone the pluto firmware repository</p>
-<div class="codehilite"><pre><span></span><code>git clone --recursive https://github.com/analogdevicesinc/plutosdr-fw.git
+<p>Clone the pluto firmware repository:</p>
+<div class="codehilite"><pre><span></span><code>git clone --recurse-submodules -j8 https://github.com/analogdevicesinc/plutosdr-fw.git
 </code></pre></div>
 
 
 <p>Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
-The corresponding patch is patch-4.19-rt1.patch.gz from here: <a href="https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/">https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/</a></p>
+The corresponding patch is <a href="https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/4.19/older/patch-4.19-rt1.patch.gz">patch-4.19-rt1.patch.gz</a> from here: <a href="https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/">https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/</a></p>
 <p>The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:</p>
 <div class="codehilite"><pre><span></span><code>$ cd plutosdr-fw/
 $ make -C linux ARCH=arm zynq_pluto_defconfig
@@ -535,7 +542,7 @@ $ make -C linux ARCH=arm menuconfig
 <h3 id="configure-the-linux-kernel">Configure the linux kernel<a class="headerlink" href="#configure-the-linux-kernel" title="Permanent link">&para;</a></h3>
 <p>Unpack the patch. Then apply it:</p>
 <div class="codehilite"><pre><span></span><code>cd plutosdr-fw/linux/
-patch -p1 &lt; /path-to-patch/patch-4.14-rt1.patch
+patch -p1 &lt; /path-to-patch/patch-4.19-rt1.patch
 </code></pre></div>
 
 
