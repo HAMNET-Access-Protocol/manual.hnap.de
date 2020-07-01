@@ -8,23 +8,29 @@ In order to be able to build the firmware, Xilinx Vivado Webpack 2018.2 has to b
 Get it from [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html).  
 Version **2018.2** is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
 During the software install, make sure the SDK and the Zynq 7000 software parts are installed (all other parts can be unselected).
+You'll still need about 29 GB free disc space for this.
 
 This guide assumes that you install Vivado and the SDK into `/opt/Xilinx/`.
 
 To be able to compile the C applications, we need the pluto sysroot structure. The most recent
 firmware and application require additional libraries. The pluto-sysroot folder that includes the
-include files for these libs can be found under [releases](https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases) in the repository: pluto-sysroot-0.31-mod.  
-Copy the directory to `~/pluto-0.31.sysroot`.
+include files for these libs can be found under [releases](https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases): pluto-0.31-mod.sysroot.zip  
+Unzip the directory to `~/pluto-0.31.sysroot`.
 
+```bash
+cd ~
+wget https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases/download/v1.0.0/pluto-0.31-mod.sysroot.zip
+unzip pluto-0.31-mod.sysroot.zip
+```
 
 ### Download the firmware sources
-Clone the pluto firmware repository
+Clone the pluto firmware repository:
 ```
-git clone --recursive https://github.com/analogdevicesinc/plutosdr-fw.git
+git clone --recurse-submodules -j8 https://github.com/analogdevicesinc/plutosdr-fw.git
 ```
 
 Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
-The corresponding patch is patch-4.19-rt1.patch.gz from here: [https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/](https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/)
+The corresponding patch is [patch-4.19-rt1.patch.gz](https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/4.19/older/patch-4.19-rt1.patch.gz) from here: [https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/](https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/)
 
 The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:
 ```
@@ -40,7 +46,7 @@ A menuconfig window should appear with the linux kernel version in the title.
 Unpack the patch. Then apply it:
 ```
 cd plutosdr-fw/linux/
-patch -p1 < /path-to-patch/patch-4.14-rt1.patch
+patch -p1 < /path-to-patch/patch-4.19-rt1.patch
 ```
 
 Now we will configure the linux kernel. This can be done with menuconfig.  

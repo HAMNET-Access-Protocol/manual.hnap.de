@@ -3,9 +3,9 @@
 The PHY and MAC layer can be simulated over a channel, in order to test BER performance. Here is 
 how to build the target on your PC.
 
-First, install libfftw:
+First, install libfftw and libconfig:
 
-`apt install libfftw3-dev`
+`apt install libfftw3-dev libconfig-dev`
 
 Then, compile and install libfec
 
@@ -32,7 +32,7 @@ Finally, the simulation target can be compiled. The transceiver project uses cma
 for the simulation is called test_mac.
 
 ```
-cd transceiver
+cd HNAP4PlutoSDR
 mkdir cmake-build-debug
 cd cmake-build-debug
 cmake -DCMAKE_BUILD_TYPE=Debug ..   # or Release, as you wish

@@ -3,9 +3,15 @@
 If you do not want to compile the complete firmware image, but still want to make changes to the basestation/client,
 use this guide for how to cross-compile the applications.
 
-If you already have the Xilinx SDK installed, you can skip the first step.
 
-### 1. Get arm toolchain and pluto sysroot
+### 1. Get ARM toolchain
+
+!!! note "Already got Xilinx SDK installed?"
+    If you already have the Xilinx SDK installed, you can skip this step.
+    You may have to add the toolchain folder to your path, though.
+    (add `export PATH=$PATH:/opt/Xilinx/SDK/2018.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin` 
+    to `~/.profile`)
+
 First, the arm toolchain has to be installed. Again, a more detailed instruction
 can be found [here](https://wiki.analog.com/university/tools/pluto/devs/embedded_code).
 
@@ -13,7 +19,7 @@ We use linaro toolchain 7.2-2017.11, download it from [here](http://releases.lin
 
 Unpack it and copy it to /usr/local/bin/
 
-```
+```bash
 tar -xf gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz
 sudo mv gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf/ /usr/local/bin/gcc-linaro-7.2.1
 ```
@@ -21,27 +27,38 @@ sudo mv gcc-linaro-7.2.1-2017.11-x86_64_arm-linux-gnueabihf/ /usr/local/bin/gcc-
 Next, add the toolchain location to the path variable. To make this permanent, edit
 ` ~/.profile` and add the following lines:
 
-```
+```bash
 # add linaro gcc to path
 export PATH=$PATH:/usr/local/bin/gcc-linaro-7.2.1/bin
 ```
 Log off and on to apply the changes.
 
+### 2. Get custom PLUTO sysroot
+
 To successfully cross-compile, the pluto root directory has to be known. We use a custom sysroot, that
 can be fetched in the release section of the [repository](https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases).
 
-Download it and copy the folder to your home directory.
+Download it and copy the folder to your home directory and set the environment variable **PLUTO_SYSROOT_DIR**.
+It will be used by some of the following scripts.
 
-### 2. compile libraries
+```bash
+export PLUTO_SYSROOT_DIR=$HOME/pluto-0.31.sysroot
+```
+
+### 3. Compile libraries
 
 We have to compile libfftw on our own, because liquid-dsp requires
 the single precision fftw3 lib, but adalm pluto only has the double precision version
 installed by default.
 
 Get the tarball from [http://fftw.org/download.html](http://fftw.org/download.html) and unpack it.
+We are using FFTW 3.3.8.
 
 ```
-./configure --host=arm-linux-gnueabihf --enable-float --enable-shared --prefix="$HOME/pluto-0.31.sysroot/usr/" CC="arm-linux-gnueabihf-gcc --sysroot=$HOME/pluto-0.31.sysroot/"
+wget http://fftw.org/fftw-3.3.8.tar.gz
+tar xzfv fftw-3.3.8.tar.gz
+cd fftw-3.3.8
+./configure --host=arm-linux-gnueabihf --enable-float --enable-shared --prefix="$PLUTO_SYSROOT_DIR/usr/" CC="arm-linux-gnueabihf-gcc --sysroot=$PLUTO_SYSROOT_DIR/"
 make
 make install
 ```
@@ -49,28 +66,33 @@ This will install the shared library to the sysroot directory.
 
 libfec and liquid-dsp can be configured and cross-compiled with the follwing commands
 
-```
-cd <libfec/liquid-dsp>
-./configure arm --host=arm-linux-gnueabihf  --prefix="$HOME/pluto-0.31.sysroot/usr/" CC="arm-linux-gnueabihf-gcc --sysroot=$HOME/pluto-0.31.sysroot/"
+```bash
+git clone --recursive https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR.git
 
-<see note below for liquid-dsp>
+cd HNAP4PlutoSDR/libfec
+./configure arm --host=arm-linux-gnueabihf  --prefix="$PLUTO_SYSROOT_DIR/usr/" CC="arm-linux-gnueabihf-gcc --sysroot=$PLUTO_SYSROOT_DIR/"
+make
+make install
+
+cd ../liquid-dsp
+apt install automake autoconf
+./bootstrap.sh
+./configure arm --host=arm-linux-gnueabihf  --prefix="$PLUTO_SYSROOT_DIR/usr/" CC="arm-linux-gnueabihf-gcc --sysroot=$PLUTO_SYSROOT_DIR/"
+sed -i '/rpl_realloc/d' config.h
+sed -i '/rpl_malloc/d' config.h
 make
 make install
 ```
 
-NOTE: For liquid-dsp, the configure script does not correctly detect malloc and realloc C functions, and thus make fails! Use these command to fix this:
-```
-sed -i '/rpl_realloc/d' config.h
-sed -i '/rpl_malloc/d' config.h
-```
-Then, run make && make install.
+NOTE: For liquid-dsp, the configure script does not correctly detect malloc and
+realloc C functions, and thus make fails! We use the sed commands to fix this.
 
 
-### 3. compile apps
+### 4. Compile apps
 
 The apps are built using cmake. The target names are basestation client and client-calib.
 
-```
+```bash
 mkdir cmake-build-release-arm
 cd cmake-build-release-arm
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=CmakeArmToolchain.cmake ..
@@ -79,13 +101,13 @@ make client
 make client-calib
 ```
 
-### 4. Upload everything to pluto
+### 5. Upload everything to pluto
 
 Configure your Host PC as described in the **Host PC configuration** section.
 
 To upload applications, do:
 ```
-cd transceiver/cmake-build-release-arm/
+cd HNAP4PlutoSDR/cmake-build-release-arm/
 scp basestation client client-calib plutosdr:/root/
 ```
 
