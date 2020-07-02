@@ -33,7 +33,7 @@ export PATH=$PATH:/usr/local/bin/gcc-linaro-7.2.1/bin
 ```
 Log off and on to apply the changes.
 
-### 2. Get custom PLUTO sysroot
+### 2. Get custom Pluto sysroot
 
 To successfully cross-compile, the pluto root directory has to be known. We use a custom sysroot, that
 can be fetched in the release section of the [repository](https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases).

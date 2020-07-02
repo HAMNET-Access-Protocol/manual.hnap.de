@@ -1,9 +1,12 @@
-## Creating the pluto firmware
+## Building the HNAP Pluto firmware
 This section will help you to create a custom firmware that includes all libraries, apps and autoconfiguration scripts for operating
 the HNAP transceiver.
 In order to guarantee a stable operation at high data-rates, the we use the linux realtime kernel patch. The following guide includes all steps to create a custom RT linux firmware with all necessary configurations for running as a client or as basestation.
 
 ### Prerequisites
+
+#### Xilinx Vivado SDK
+
 In order to be able to build the firmware, Xilinx Vivado Webpack 2018.2 has to be installed.
 Get it from [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html).  
 Version **2018.2** is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
@@ -12,24 +15,32 @@ You'll still need about 29 GB free disc space for this.
 
 This guide assumes that you install Vivado and the SDK into `/opt/Xilinx/`.
 
+#### Custom Pluto sysroot
+
 To be able to compile the C applications, we need the pluto sysroot structure. The most recent
 firmware and application require additional libraries. The pluto-sysroot folder that includes the
 include files for these libs can be found under [releases](https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases): pluto-0.31-mod.sysroot.zip  
-Unzip the directory to `~/pluto-0.31.sysroot`.
+Unzip the directory to `~/pluto-0.31.sysroot`, then set the environment variable **PLUTO_SYSROOT_DIR**.
+It will be used by some of the following scripts.
 
 ```bash
 cd ~
 wget https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases/download/v1.0.0/pluto-0.31-mod.sysroot.zip
 unzip pluto-0.31-mod.sysroot.zip
+export PLUTO_SYSROOT_DIR=$HOME/pluto-0.31.sysroot
 ```
 
-### Download the firmware sources
-Clone the pluto firmware repository:
+### Download the Pluto firmware sources
+
+Clone the Pluto firmware repository:
 ```
 git clone --recurse-submodules -j8 https://github.com/analogdevicesinc/plutosdr-fw.git
 ```
 
-Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
+### Apply the realtime patch for the linux kernel
+
+Next, the linux realtime kernel patch will be applied.  
+The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
 The corresponding patch is [patch-4.19-rt1.patch.gz](https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/4.19/older/patch-4.19-rt1.patch.gz) from here: [https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/](https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/)
 
 The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:
@@ -115,7 +126,7 @@ Then run:
 ```
 The script will build all dependent libraries (libfec, liquid-dsp) and the C applications. Then it fills the rootoverlay with the applications, some startup scripts and FIR filter coefficients that we use.
 
-### Building the firmware
+### Build firmware image
 
 Now everything is set up to build the firmware image:
 ```
@@ -145,7 +156,8 @@ make -C buildroot savedefconfig
 make
 ```
 
-After the build finished, the firmware image can be found in `plutosdr-fw/build/pluto.frm`.
+After the build finished, the firmware image can be found in `plutosdr-fw/build/pluto.frm`.  
+It can be installed using these [instructions](../installation).
 
 
 
