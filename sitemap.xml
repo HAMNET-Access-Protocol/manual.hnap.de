@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://manual.hnap.de/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/prerequisites/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/installation/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/usage/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/system_config/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/advanced_config/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/building_the_fw/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/build_simulation/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/build_apps/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://manual.hnap.de/documentation/callsign/</loc>
-     <lastmod>2020-07-01</lastmod>
+     <lastmod>2020-07-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -58,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-the-pluto-firmware" class="md-skip">
+        <a href="#building-the-hnap-pluto-firmware" class="md-skip">
           Skip to content
         </a>
       
@@ -284,11 +284,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-the-pluto-firmware" class="md-nav__link">
-    Creating the pluto firmware
+  <a href="#building-the-hnap-pluto-firmware" class="md-nav__link">
+    Building the HNAP Pluto firmware
   </a>
   
-    <nav class="md-nav" aria-label="Creating the pluto firmware">
+    <nav class="md-nav" aria-label="Building the HNAP Pluto firmware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -296,11 +296,38 @@
     Prerequisites
   </a>
   
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xilinx-vivado-sdk" class="md-nav__link">
+    Xilinx Vivado SDK
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#download-the-firmware-sources" class="md-nav__link">
-    Download the firmware sources
+  <a href="#custom-pluto-sysroot" class="md-nav__link">
+    Custom Pluto sysroot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-pluto-firmware-sources" class="md-nav__link">
+    Download the Pluto firmware sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-the-realtime-patch-for-the-linux-kernel" class="md-nav__link">
+    Apply the realtime patch for the linux kernel
   </a>
   
 </li>
@@ -320,8 +347,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#building-the-firmware" class="md-nav__link">
-    Building the firmware
+  <a href="#build-firmware-image" class="md-nav__link">
+    Build firmware image
   </a>
   
 </li>
@@ -433,11 +460,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-the-pluto-firmware" class="md-nav__link">
-    Creating the pluto firmware
+  <a href="#building-the-hnap-pluto-firmware" class="md-nav__link">
+    Building the HNAP Pluto firmware
   </a>
   
-    <nav class="md-nav" aria-label="Creating the pluto firmware">
+    <nav class="md-nav" aria-label="Building the HNAP Pluto firmware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -445,11 +472,38 @@
     Prerequisites
   </a>
   
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xilinx-vivado-sdk" class="md-nav__link">
+    Xilinx Vivado SDK
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#download-the-firmware-sources" class="md-nav__link">
-    Download the firmware sources
+  <a href="#custom-pluto-sysroot" class="md-nav__link">
+    Custom Pluto sysroot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-pluto-firmware-sources" class="md-nav__link">
+    Download the Pluto firmware sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-the-realtime-patch-for-the-linux-kernel" class="md-nav__link">
+    Apply the realtime patch for the linux kernel
   </a>
   
 </li>
@@ -469,8 +523,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#building-the-firmware" class="md-nav__link">
-    Building the firmware
+  <a href="#build-firmware-image" class="md-nav__link">
+    Build firmware image
   </a>
   
 </li>
@@ -502,34 +556,40 @@
                 
                   <h1>Building the Firmware</h1>
                 
-                <h2 id="creating-the-pluto-firmware">Creating the pluto firmware<a class="headerlink" href="#creating-the-pluto-firmware" title="Permanent link">&para;</a></h2>
+                <h2 id="building-the-hnap-pluto-firmware">Building the HNAP Pluto firmware<a class="headerlink" href="#building-the-hnap-pluto-firmware" title="Permanent link">&para;</a></h2>
 <p>This section will help you to create a custom firmware that includes all libraries, apps and autoconfiguration scripts for operating
 the HNAP transceiver.
 In order to guarantee a stable operation at high data-rates, the we use the linux realtime kernel patch. The following guide includes all steps to create a custom RT linux firmware with all necessary configurations for running as a client or as basestation.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<h4 id="xilinx-vivado-sdk">Xilinx Vivado SDK<a class="headerlink" href="#xilinx-vivado-sdk" title="Permanent link">&para;</a></h4>
 <p>In order to be able to build the firmware, Xilinx Vivado Webpack 2018.2 has to be installed.
 Get it from <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html">here</a>.<br />
 Version <strong>2018.2</strong> is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
 During the software install, make sure the SDK and the Zynq 7000 software parts are installed (all other parts can be unselected).
 You'll still need about 29 GB free disc space for this.</p>
 <p>This guide assumes that you install Vivado and the SDK into <code>/opt/Xilinx/</code>.</p>
+<h4 id="custom-pluto-sysroot">Custom Pluto sysroot<a class="headerlink" href="#custom-pluto-sysroot" title="Permanent link">&para;</a></h4>
 <p>To be able to compile the C applications, we need the pluto sysroot structure. The most recent
 firmware and application require additional libraries. The pluto-sysroot folder that includes the
 include files for these libs can be found under <a href="https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases">releases</a>: pluto-0.31-mod.sysroot.zip<br />
-Unzip the directory to <code>~/pluto-0.31.sysroot</code>.</p>
+Unzip the directory to <code>~/pluto-0.31.sysroot</code>, then set the environment variable <strong>PLUTO_SYSROOT_DIR</strong>.
+It will be used by some of the following scripts.</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~
 wget https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases/download/v1.0.0/pluto-0.31-mod.sysroot.zip
 unzip pluto-0.31-mod.sysroot.zip
+<span class="nb">export</span> <span class="nv">PLUTO_SYSROOT_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/pluto-0.31.sysroot
 </code></pre></div>
 
 
-<h3 id="download-the-firmware-sources">Download the firmware sources<a class="headerlink" href="#download-the-firmware-sources" title="Permanent link">&para;</a></h3>
-<p>Clone the pluto firmware repository:</p>
+<h3 id="download-the-pluto-firmware-sources">Download the Pluto firmware sources<a class="headerlink" href="#download-the-pluto-firmware-sources" title="Permanent link">&para;</a></h3>
+<p>Clone the Pluto firmware repository:</p>
 <div class="codehilite"><pre><span></span><code>git clone --recurse-submodules -j8 https://github.com/analogdevicesinc/plutosdr-fw.git
 </code></pre></div>
 
 
-<p>Next, the linux realtime kernel patch will be applied. The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
+<h3 id="apply-the-realtime-patch-for-the-linux-kernel">Apply the realtime patch for the linux kernel<a class="headerlink" href="#apply-the-realtime-patch-for-the-linux-kernel" title="Permanent link">&para;</a></h3>
+<p>Next, the linux realtime kernel patch will be applied.<br />
+The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
 The corresponding patch is <a href="https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/4.19/older/patch-4.19-rt1.patch.gz">patch-4.19-rt1.patch.gz</a> from here: <a href="https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/">https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/</a></p>
 <p>The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:</p>
 <div class="codehilite"><pre><span></span><code>$ cd plutosdr-fw/
@@ -604,7 +664,7 @@ Before you run it, edit it and check that the Variables <code>PLUTOSDR_FW_ROOTOV
 
 
 <p>The script will build all dependent libraries (libfec, liquid-dsp) and the C applications. Then it fills the rootoverlay with the applications, some startup scripts and FIR filter coefficients that we use.</p>
-<h3 id="building-the-firmware">Building the firmware<a class="headerlink" href="#building-the-firmware" title="Permanent link">&para;</a></h3>
+<h3 id="build-firmware-image">Build firmware image<a class="headerlink" href="#build-firmware-image" title="Permanent link">&para;</a></h3>
 <p>Now everything is set up to build the firmware image:</p>
 <div class="codehilite"><pre><span></span><code>cd plutosdr-fw/
 make
@@ -633,7 +693,8 @@ make
 </code></pre></div>
 
 
-<p>After the build finished, the firmware image can be found in <code>plutosdr-fw/build/pluto.frm</code>.</p>
+<p>After the build finished, the firmware image can be found in <code>plutosdr-fw/build/pluto.frm</code>.<br />
+It can be installed using these <a href="../installation">instructions</a>.</p>
                 
               
               
