@@ -1,0 +1,826 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://manual.hnap.de/building_the_fw/">
+      
+      
+      <link rel="shortcut icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
+    
+    
+      
+        <title>Building the Firmware - manual.hnap.de</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e35a1a6.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a46bcfb3.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/pdf.css">
+    
+      <link rel="stylesheet" href="../css/version-select.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-the-hnap-pluto-firmware" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://manual.hnap.de" title="manual.hnap.de" class="md-header-nav__button md-logo" aria-label="manual.hnap.de">
+      
+  <img src="https://hnap.de/assets/img/hnap_logo_quadrat.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            manual.hnap.de
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Building the Firmware
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HAMNET-Access-Protocol/manual.hnap.de
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://manual.hnap.de" title="manual.hnap.de" class="md-nav__button md-logo" aria-label="manual.hnap.de">
+      
+  <img src="https://hnap.de/assets/img/hnap_logo_quadrat.png" alt="logo">
+
+    </a>
+    manual.hnap.de
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    HAMNET-Access-Protocol/manual.hnap.de
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../usage/" title="Usage" class="md-nav__link">
+      Usage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../system_config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Development
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Development" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../advanced_config/" title="Advanced Configuration" class="md-nav__link">
+      Advanced Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Building the Firmware
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Building the Firmware" class="md-nav__link md-nav__link--active">
+      Building the Firmware
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-hnap-pluto-firmware" class="md-nav__link">
+    Building the HNAP Pluto firmware
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the HNAP Pluto firmware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xilinx-vivado-sdk" class="md-nav__link">
+    Xilinx Vivado SDK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-pluto-sysroot" class="md-nav__link">
+    Custom Pluto sysroot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-pluto-firmware-sources" class="md-nav__link">
+    Download the Pluto firmware sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-the-realtime-patch-for-the-linux-kernel" class="md-nav__link">
+    Apply the realtime patch for the linux kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-linux-kernel" class="md-nav__link">
+    Configure the linux kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-userspace-apps" class="md-nav__link">
+    Configure the userspace apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-firmware-image" class="md-nav__link">
+    Build firmware image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../build_simulation/" title="Build the simulation target" class="md-nav__link">
+      Build the simulation target
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../build_apps/" title="Build apps without firmware" class="md-nav__link">
+      Build apps without firmware
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Documentation
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../documentation/callsign/" title="Callsign Distribution" class="md-nav__link">
+      Callsign Distribution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-hnap-pluto-firmware" class="md-nav__link">
+    Building the HNAP Pluto firmware
+  </a>
+  
+    <nav class="md-nav" aria-label="Building the HNAP Pluto firmware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xilinx-vivado-sdk" class="md-nav__link">
+    Xilinx Vivado SDK
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-pluto-sysroot" class="md-nav__link">
+    Custom Pluto sysroot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-pluto-firmware-sources" class="md-nav__link">
+    Download the Pluto firmware sources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-the-realtime-patch-for-the-linux-kernel" class="md-nav__link">
+    Apply the realtime patch for the linux kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-linux-kernel" class="md-nav__link">
+    Configure the linux kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-the-userspace-apps" class="md-nav__link">
+    Configure the userspace apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-firmware-image" class="md-nav__link">
+    Build firmware image
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/HAMNET-Access-Protocol/manual.hnap.de/edit/master/docs/building_the_fw.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Building the Firmware</h1>
+                
+                <h2 id="building-the-hnap-pluto-firmware">Building the HNAP Pluto firmware<a class="headerlink" href="#building-the-hnap-pluto-firmware" title="Permanent link">&para;</a></h2>
+<p>This section will help you to create a custom firmware that includes all libraries, apps and autoconfiguration scripts for operating
+the HNAP transceiver.
+In order to guarantee a stable operation at high data-rates, the we use the linux realtime kernel patch. The following guide includes all steps to create a custom RT linux firmware with all necessary configurations for running as a client or as basestation.</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<h4 id="xilinx-vivado-sdk">Xilinx Vivado SDK<a class="headerlink" href="#xilinx-vivado-sdk" title="Permanent link">&para;</a></h4>
+<p>In order to be able to build the firmware, Xilinx Vivado Webpack 2018.2 has to be installed.
+Get it from <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html">here</a>.<br />
+Version <strong>2018.2</strong> is listed in the Archive section. You have to create a Xilinx account to get the SDK, but the required webpack version is free.
+During the software install, make sure the SDK and the Zynq 7000 software parts are installed (all other parts can be unselected).
+You'll still need about 29 GB free disc space for this.</p>
+<p>This guide assumes that you install Vivado and the SDK into <code>/opt/Xilinx/</code>.</p>
+<h4 id="custom-pluto-sysroot">Custom Pluto sysroot<a class="headerlink" href="#custom-pluto-sysroot" title="Permanent link">&para;</a></h4>
+<p>To be able to compile the C applications, we need the pluto sysroot structure. The most recent
+firmware and application require additional libraries. The pluto-sysroot folder that includes the
+include files for these libs can be found under <a href="https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases">releases</a>: pluto-0.31-mod.sysroot.zip<br />
+Unzip the directory to <code>~/pluto-0.31.sysroot</code>, then set the environment variable <strong>PLUTO_SYSROOT_DIR</strong>.
+It will be used by some of the following scripts.</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~
+wget https://github.com/HAMNET-Access-Protocol/HNAP4PlutoSDR/releases/download/v1.0.0/pluto-0.31-mod.sysroot.zip
+unzip pluto-0.31-mod.sysroot.zip
+<span class="nb">export</span> <span class="nv">PLUTO_SYSROOT_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/pluto-0.31.sysroot
+</code></pre></div>
+
+
+<h3 id="download-the-pluto-firmware-sources">Download the Pluto firmware sources<a class="headerlink" href="#download-the-pluto-firmware-sources" title="Permanent link">&para;</a></h3>
+<p>Clone the Pluto firmware repository:</p>
+<div class="codehilite"><pre><span></span><code>git clone --recurse-submodules -j8 https://github.com/analogdevicesinc/plutosdr-fw.git
+</code></pre></div>
+
+
+<h3 id="apply-the-realtime-patch-for-the-linux-kernel">Apply the realtime patch for the linux kernel<a class="headerlink" href="#apply-the-realtime-patch-for-the-linux-kernel" title="Permanent link">&para;</a></h3>
+<p>Next, the linux realtime kernel patch will be applied.<br />
+The current plutosdr-fw Version 0.31 uses Linux Kernel Version 4.19.0.
+The corresponding patch is <a href="https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/4.19/older/patch-4.19-rt1.patch.gz">patch-4.19-rt1.patch.gz</a> from here: <a href="https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/">https://kernel.org/pub/linux/kernel/projects/rt/4.19/older/</a></p>
+<p>The patch must match the linux kernel version. If you did not download plutosdr-fw v0.31, check the linux kernel version used in plutosdr-fw as follows:</p>
+<div class="codehilite"><pre><span></span><code>$ cd plutosdr-fw/
+$ make -C linux ARCH=arm zynq_pluto_defconfig
+$ make -C linux ARCH=arm menuconfig
+</code></pre></div>
+
+
+<p>A menuconfig window should appear with the linux kernel version in the title.</p>
+<h3 id="configure-the-linux-kernel">Configure the linux kernel<a class="headerlink" href="#configure-the-linux-kernel" title="Permanent link">&para;</a></h3>
+<p>Unpack the patch. Then apply it:</p>
+<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/linux/
+patch -p1 &lt; /path-to-patch/patch-4.19-rt1.patch
+</code></pre></div>
+
+
+<p>Now we will configure the linux kernel. This can be done with menuconfig.<br />
+First, load the kernel config for the pluto device:</p>
+<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/
+make -C linux ARCH=arm zynq_pluto_defconfig
+</code></pre></div>
+
+
+<p>Then edit it with menuconfig:</p>
+<div class="codehilite"><pre><span></span><code>make -C linux ARCH=arm menuconfig
+</code></pre></div>
+
+
+<p>You will have do make the following changes:</p>
+<ul>
+<li>Go to: General Setup ---&gt; Preemption Model ---&gt; select Fully Preemptible Kernel (RT)</li>
+<li>Go to: Device Drivers ---&gt; Network device support ---&gt; Universal TUN/TAP device driver support. Type 'Y' to activate</li>
+</ul>
+<p>If you cannot find the entries, do a search by typing '/' and go to the search result by typing the result number, e.g. '1'.</p>
+<p>Go to 'Save' and use <code>arch/arm/configs/zynq_pluto_defconfig</code> to overwrite the default zynq_pluto configuration.</p>
+<h3 id="configure-the-userspace-apps">Configure the userspace apps<a class="headerlink" href="#configure-the-userspace-apps" title="Permanent link">&para;</a></h3>
+<p>Next, we will activate some useful userspace apps in buildroot. Load the pluto default configuration.</p>
+<div class="codehilite"><pre><span></span><code>make -C buildroot ARCH=arm zynq_pluto_defconfig
+make -C buildroot ARCH=arm menuconfig
+</code></pre></div>
+
+
+<p>Its the easiest to search for the apps with '/', select the result (e.g. '1') and activate it with 'y'.</p>
+<ul>
+<li><strong>tunctl</strong>. Required. Must be installed to configgure the tap device</li>
+<li><strong>fftw-single</strong>. Required. Search term 'single'. We need the single precision fftw library. Make sure to select 'BR2_PACKAGE_FFTW_SINGLE' and  not the legacy option.</li>
+<li><strong>libconfig</strong>. Required. Search term 'libconfig'. A library to parse configuration files.</li>
+<li><strong>lldpd</strong>. Required. Link Layer Discovery protocol. Used to broadcast callsigns.</li>
+<li><strong>iperf3</strong>. Optional but recommended. Useful for bandwidth tests.</li>
+<li><strong>tcpdump</strong>+<strong>gdb</strong> Optional. Useful for debugging.</li>
+</ul>
+<p>For me, the External toolchain kernel header version was not correctly configured. If this is not correctly set, building the firmware will fail.
+I had to set kernel header series 4.10.x, previously it was at 4.9.x. You can do this under 'Toolchain ---&gt; External toolchain kernel headers series'.</p>
+<p>In order to preinstall our own applications, we will create a rootfs overlay folder and tell buildroot to overlay this folder over the created filesystem.
+Activate this with:</p>
+<ul>
+<li><code>System configuration ---&gt; Root filesystem overlay directories</code></li>
+</ul>
+<p>I choose <code>/home/lukas/plutosdr-fw/rootfs-overlay/</code>, keep in mind the chosen directory name when creating the overlay in the next steps.</p>
+<p>Save the configuration by using the default path. Then overwrite the pluto target config with the following command:</p>
+<div class="codehilite"><pre><span></span><code>make -C buildroot savedefconfig
+</code></pre></div>
+
+
+<p>Now we will fill the rootfs-overlay directory.
+The git repository containing this readme comes with a script <code>config-firmware.sh</code>. It should do everything on its own.
+Before you run it, edit it and check that the Variables <code>PLUTOSDR_FW_ROOTOVERLAY</code> and <code>PLUTO_SYSROOT_DIR</code> point to the correct paths.</p>
+<p>Also, verify that <code>transceiver/CmakeArmToolchain.cmake</code> uses the correct sysroot path and the correct Xilinx toolchain path.</p>
+<p>Then run:</p>
+<div class="codehilite"><pre><span></span><code>./config-firmware.sh
+</code></pre></div>
+
+
+<p>The script will build all dependent libraries (libfec, liquid-dsp) and the C applications. Then it fills the rootoverlay with the applications, some startup scripts and FIR filter coefficients that we use.</p>
+<h3 id="build-firmware-image">Build firmware image<a class="headerlink" href="#build-firmware-image" title="Permanent link">&para;</a></h3>
+<p>Now everything is set up to build the firmware image:</p>
+<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/
+make
+</code></pre></div>
+
+
+<p>That's it.</p>
+<p>If you get an error like</p>
+<blockquote>
+<p>Incorrect selection of kernel headers: expected 4.14.x, got 4.10.x
+  Incorrect selection of gcc version: expected 8.x, got 7.2.1</p>
+</blockquote>
+<p>You have to clean your current buildroot configuration and have to start from scratch with the last saved config.
+Go back to the buildroot userspace configuration and make sure to save the configuration at the end.</p>
+<p>In the menuconfig step check your old settings from above and: </p>
+<ul>
+<li>Go to: Toolchain -&gt; External Toolchain kernel headers series 4.10.x</li>
+<li>Go to: Toolchain -&gt; External Toolchain gcc version -&gt; 7.x</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>cd plutosdr-fw/
+make -C buildroot ARCH=arm clean
+make -C buildroot ARCH=arm zynq_pluto_defconfig
+make -C buildroot ARCH=arm menuconfig
+make -C buildroot savedefconfig
+make
+</code></pre></div>
+
+
+<p>After the build finished, the firmware image can be found in <code>plutosdr-fw/build/pluto.frm</code>.<br />
+It can be installed using these <a href="../installation">instructions</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../advanced_config/" title="Advanced Configuration" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Advanced Configuration
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../build_simulation/" title="Build the simulation target" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Build the simulation target
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/HAMNET-Access-Protocol" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.7a2ea5ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../js/version-select.js"></script>
+      
+    
+  </body>
+</html>
