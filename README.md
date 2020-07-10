@@ -26,12 +26,9 @@ python -m pip install -r requirements.txt
 
 This command starts a local webserver at [localhost:8000](http://localhost:8000).
 
-## Deploy to Github Pages
+## Add a new version
 
 `mike deploy <version> <alias> <-u> <-p>`
-
-Will build the static files and push to the gh-pages branch on Github, so they
-will be served automatically at [manual.hnap.de](https://manual.hnap.de)
 
 `<version>` is the version number of the documentation (e.g. 1.0.0).  
 `<alias>` is an alias for this version. Currently, we use the alias `latest`
@@ -40,7 +37,13 @@ to set the version which is automatically shown when visiting the website.
 If the version number (e.g. 1.0.0) already exists, you have to add `-u` (for
 update) to the command.
 
+## Deploy to Github Pages
+
 To push the content to Github, add `-p`.
+
+This will build the static files and push to the gh-pages branch on Github,
+so they will be served automatically at
+[manual.hnap.de](https://manual.hnap.de).
 
 So a complete command might look like this:
 
