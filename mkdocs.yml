@@ -20,6 +20,7 @@ extra_css:
 
 # Customization
 plugins:
+  - search
   - pdf-export:
       verbose: false
       combined: true
