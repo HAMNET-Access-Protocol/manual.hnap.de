@@ -1,6 +1,8 @@
 # HNAP Manual
 
 This manual is [mkdocs](https://www.mkdocs.org/) based.
+It supports documentation of multiple versions using the
+[mike](https://pypi.org/project/mike/) utility.
 
 ## Install mkdocs, mkdocs-material and pdf-export-plugin
 
@@ -20,22 +22,29 @@ python -m pip install -r requirements.txt
 
 ## View documentation locally
 
-`mkdocs serve`
+`mike serve`
 
 This command starts a local webserver at [localhost:8000](http://localhost:8000).
 
-## Build static documentation files (HTML)
-
-`mkdocs build`
-
-This command builds the documentation in ./site/
-
 ## Deploy to Github Pages
 
-`mkdocs gh-deploy`
+`mike deploy <version> <alias> <-u> <-p>`
 
 Will build the static files and push to the gh-pages branch on Github, so they
 will be served automatically at [manual.hnap.de](https://manual.hnap.de)
+
+`<version>` is the version number of the documentation (e.g. 1.0.0).  
+`<alias>` is an alias for this version. Currently, we use the alias `latest`
+to set the version which is automatically shown when visiting the website.
+
+If the version number (e.g. 1.0.0) already exists, you have to add `-u` (for
+update) to the command.
+
+To push the content to Github, add `-p`.
+
+So a complete command might look like this:
+
+`mike deploy 1.0.0 latest -u -p`
 
 ## Generate PDF
 

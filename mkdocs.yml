@@ -8,34 +8,34 @@ repo_url: https://github.com/HAMNET-Access-Protocol/manual.hnap.de
 
 # Configuration
 theme:
-  name: material
-  palette:
-    primary: 'white'
-    accent: 'light blue'
-  logo: https://hnap.de/assets/img/hnap_logo_quadrat.png
-  favicon: assets/favicon.ico
-  font: false
+    name: material
+    palette:
+        primary: 'white'
+        accent: 'light blue'
+    logo: https://hnap.de/assets/img/hnap_logo_quadrat.png
+    favicon: assets/favicon.ico
+    font: false
 extra_css:
   - css/pdf.css
 
 # Customization
+  - css/version-select.css
 plugins:
   - search
   - pdf-export:
-      verbose: false
-      combined: true
-      enabled_if_env: ENABLE_PDF_EXPORT
+        verbose: false
+        combined: true
+        enabled_if_env: ENABLE_PDF_EXPORT
 extra:
-  version: 1.0
-  social:
-    - icon: fontawesome/brands/github-alt
-      link: 'https://github.com/HAMNET-Access-Protocol'
+    social:
+      - icon: fontawesome/brands/github-alt
+        link: 'https://github.com/HAMNET-Access-Protocol'
 markdown_extensions:
   - admonition
   - codehilite:
-      guess_lang: false
+        guess_lang: false
   - toc:
-      permalink: true
+        permalink: true
 nav:
   - Home: index.md
   - Prerequisites: prerequisites.md
@@ -44,11 +44,13 @@ nav:
   - Configuration: system_config.md
 
   - Development:
-    - Advanced Configuration: advanced_config.md
-    - Building the Firmware: building_the_fw.md
-    - Build the simulation target: build_simulation.md
-    - Build apps without firmware: build_apps.md
+      - Advanced Configuration: advanced_config.md
+      - Building the Firmware: building_the_fw.md
+      - Build the simulation target: build_simulation.md
+      - Build apps without firmware: build_apps.md
 
   - Documentation:
-    - Callsign Distribution: documentation/callsign.md
+      - Callsign Distribution: documentation/callsign.md
 
+extra_javascript:
+  - js/version-select.js
