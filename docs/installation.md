@@ -55,4 +55,4 @@ fw_setenv hnap_bs_autostart 1
 
 That's it. Now reboot the Adalm Pluto. Then do the same steps for your second Pluto.
 
-Now you are ready to run a [first test](usage) of the system!
+Now you are ready to run a [first test](../usage) of the system!
